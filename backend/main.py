@@ -11,7 +11,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",          # frontend local
-        ""    # frontend em produção
+        "https://email-classifier-sage-gamma.vercel.app/"    # frontend em produção
         ],
     allow_credentials=True,
     allow_methods=["*"],
