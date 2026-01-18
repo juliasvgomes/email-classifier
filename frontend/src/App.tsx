@@ -32,7 +32,14 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Classificador de Emails</h1>
+      <header className="header">
+        <img
+          src="/logo.png"
+          alt="Ícone de email"
+          className="title-icon"
+        />
+        <h1>Classificador de Emails</h1>
+      </header>
 
       <EmailForm onSubmit={handleSubmit} loading={loading} />
 

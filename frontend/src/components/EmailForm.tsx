@@ -34,19 +34,26 @@ export function EmailForm({ onSubmit, loading }: EmailFormProps) {
   return (
     <form onSubmit={handleSubmit}>
       <textarea
-        placeholder="Cole o texto do email (opcional)"
+        placeholder="Cole o conteúdo do email"
         value={text}
         onChange={(e) => setText(e.target.value)}
         rows={8}
         style={{ width: "100%", marginBottom: "12px" }}
       />
 
-      <input
-        type="file"
-        accept=".txt,.pdf"
-        onChange={(e) => setFile(e.target.files?.[0] || null)}
-        style={{ marginBottom: "12px" }}
-      />
+      <div className="file-upload-container">
+        <input
+          type="file"
+          id="meuArquivo"
+          className="input-hidden"
+          accept=".txt,.pdf,.eml"
+          onChange={(e) => setFile(e.target.files?.[0] || null)}
+        />
+
+        <label htmlFor="meuArquivo" className="custom-file-upload">
+          ☁️ Arraste um arquivo (.txt ou .pdf) ou clique para selecionar
+        </label>
+      </div>
 
       <button type="submit" disabled={loading}>
         {loading ? "Processando..." : "Classificar Email"}
